@@ -8,7 +8,7 @@
 # <bitbar.abouturl>http://github.com/zkarj735/</bitbar.abouturl>
 # <swiftbar.schedule>*/15 * * * *</swiftbar.schedule>
 
-# You must provide your own API key which can only be obtained if you have a Weather 
+# You must provide your own API key which can only be obtained if you have a Weather
 # Underground account for your own Personal Weather Station (PWS). See your account
 # page for details.
 APIKEY='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
@@ -31,5 +31,5 @@ RCOLOUR='#33ddff'
 curl -s "https://api.weather.com/v2/pws/observations/current?\
 stationId=$STATIONID&format=json&units=$UNITS&apiKey=$APIKEY" \
  | sed -E -e 's/[][{}"]//g' \
-					-e "s/^.+humidity:([0-9]+).+temp:([0-9]+).+/\
-							:thermometer: \2º \1% | color=$RCOLOUR sfcolor=$SCOLOUR/"
+          -e "s/^.+humidity:([0-9]+).+temp:([0-9]+).+/\
+             :thermometer: \2º \1% | color=$RCOLOUR sfcolor=$SCOLOUR/"
